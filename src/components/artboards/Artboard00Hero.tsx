@@ -149,6 +149,7 @@ export default function Artboard00Hero() {
               className="text-display"
               style={{
                 color: "var(--accent)",
+                WebkitTextStroke: "1.5px #FDF4DC",
               }}
             >
               KUMAR
