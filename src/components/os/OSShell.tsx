@@ -476,7 +476,7 @@ export default function OSShell({ children }: { children: React.ReactNode }) {
   }, [accentColor]);
 
   useEffect(() => {
-    const sections: SectionId[] = ["hero", "about", "experience", "achievements", "contact"];
+    const sections: SectionId[] = ["hero", "about", "experience", "achievements", "skills", "contact"];
     const onScroll = () => {
       const total = document.documentElement.scrollHeight - window.innerHeight;
       const progress = total > 0 ? window.scrollY / total : 0;

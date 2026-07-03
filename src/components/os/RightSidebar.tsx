@@ -16,7 +16,8 @@ const LAYERS: Layer[] = [
   { id: "about", label: "About", num: "01" },
   { id: "experience", label: "Experience", num: "02" },
   { id: "achievements", label: "Recognition", num: "03" },
-  { id: "contact", label: "Contact", num: "04" },
+  { id: "skills", label: "Toolkit", num: "04" },
+  { id: "contact", label: "Contact", num: "05" },
 ];
 
 export default function RightSidebar() {

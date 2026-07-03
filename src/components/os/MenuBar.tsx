@@ -10,6 +10,7 @@ const NAV_ITEMS: { label: string; section: SectionId }[] = [
   { label: "About", section: "about" },
   { label: "Experience", section: "experience" },
   { label: "Recognition", section: "achievements" },
+  { label: "Toolkit", section: "skills" },
   { label: "Contact", section: "contact" },
 ];
 
