@@ -6,7 +6,7 @@ import { usePanels } from "@/hooks/usePanels";
 
 import { useActiveTool } from "@/hooks/useActiveTool";
 
-const NICKNAMES = ["SHIVAM", "TEJAS", "FORTOV", "MOTA"];
+const NICKNAMES = ["SHIVAM", "TEJAS", "FORTOV", "MOTA", "SHIVIII"];
 
 export default function Artboard00Hero() {
   const { openPanel_fn } = usePanels();
