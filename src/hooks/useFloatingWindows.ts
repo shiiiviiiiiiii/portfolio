@@ -11,6 +11,7 @@ interface WindowsState {
   maximizeWindow: (id: string) => void;
   bringToFront: (id: string) => void;
   moveWindow: (id: string, x: number, y: number) => void;
+  explodeProjects: (projects: Project[]) => void;
 }
 
 export const useFloatingWindows = create<WindowsState>((set, get) => ({
@@ -73,4 +74,25 @@ export const useFloatingWindows = create<WindowsState>((set, get) => ({
     set((s) => ({
       windows: s.windows.map((w) => (w.id === id ? { ...w, x, y } : w)),
     })),
+
+  explodeProjects: (projectsList) => {
+    const { topZ } = get();
+    let currentTopZ = topZ;
+    const newWindows = projectsList.map((project, idx) => {
+      currentTopZ += 1;
+      return {
+        id: `proj-${project.id}-${Date.now() + idx}`,
+        type: "project" as const,
+        x: 100 + idx * 28,
+        y: 80 + idx * 28,
+        width: 800,
+        height: 540,
+        minimized: false,
+        maximized: false,
+        zIndex: currentTopZ,
+        data: project,
+      };
+    });
+    set({ windows: newWindows, topZ: currentTopZ });
+  },
 }));

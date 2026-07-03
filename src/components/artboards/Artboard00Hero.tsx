@@ -4,13 +4,16 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { usePanels } from "@/hooks/usePanels";
 
+import { useFloatingWindows } from "@/hooks/useFloatingWindows";
 import { useActiveTool } from "@/hooks/useActiveTool";
+import { projects } from "@/lib/data";
 
 const NICKNAMES = ["SHIVAM", "TEJAS", "FORTOV", "MOTA", "SHIVIII"];
 
 export default function Artboard00Hero() {
   const { openPanel_fn } = usePanels();
   const { activeTool } = useActiveTool();
+  const { explodeProjects } = useFloatingWindows();
   const [nickIdx, setNickIdx] = useState(0);
 
   const cycleNickname = () => {
@@ -188,7 +191,7 @@ export default function Artboard00Hero() {
         >
           <button
             className="btn btn-primary"
-            onClick={() => scrollTo("projects")}
+            onClick={() => explodeProjects(projects)}
             data-cursor-hover
             style={{ padding: "12px 28px", borderRadius: "8px", fontSize: "13px" }}
           >
